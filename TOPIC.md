@@ -57,7 +57,7 @@
 
 
 ## 제품 소개 슬라이드
-[decks(pdf)](./decks/hackersground.pdf)
+[decks(pdf)](./decks/hakersground.pdf)
 
 
 [decks(pptx)](./decks/hakersground.pptx)
