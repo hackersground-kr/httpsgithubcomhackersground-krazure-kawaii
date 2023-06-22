@@ -1,10 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import axios from 'axios'
 import style from './CreatePage.module.css'
-import { useNavigate } from 'react-router-dom'
 
 function CreatePage () {
-  const navigate = useNavigate()
   const [type, setType] = useState<any>(false)
   const [region, setRegion] = useState('경북')
   const facilities: any = ['대명11동주민자치센터/공공시설', '우리글터지역아동센터/공공시설', '꿈앤카페/카페']
@@ -30,6 +28,8 @@ function CreatePage () {
   }
 
   const onSubmit = async () => {
+    formData.append('file', file)
+    formData.append('category', category)
     formData.append('title', title)
     formData.append('description', desc)
     formData.append('location', address)
@@ -37,20 +37,18 @@ function CreatePage () {
     formData.append('endTime', endDate)
     formData.append('price', price)
     formData.append('capacity', max)
-    formData.append('category', category)
     formData.append('type', type)
-    formData.append('file', file)
-  
 
-    const resp = await axios.post('/api/lecture/insert', formData, {
+    axios.post('/api/lecture/insert', formData, {
       headers: {
+        'Content-Type': 'multipart/form-data',
         'authorization': `Bearer  ${sessionStorage.getItem('CLIENT_TOKEN')}`
       }
-    }).catch(() => {
-      navigate('/login')
+    }).then (() => {
+      window.location.href='/dashboard'
+    }).catch((e) => {
+      console.log(e)
     })
-    console.log(resp)
-    // window.location.href='/dashboard'
   }
 
   return (
@@ -114,16 +112,16 @@ function CreatePage () {
           <div className={style.finder}>
             <div className={style.sub2}>이런 곳은 어때요?</div>
             <div className={style.tb}><div className={style.tb_item}>이름</div><div className={style.tb_item}>종류</div></div>
-              { facilities.map((el: any) => {
-                return <div className={style.table}><div className={style.tb_item}>{ el.split('/')[0] }</div><div className={style.tb_item}>{ el.split('/')[1] }</div></div>
+              { facilities.map((el: any, idx: number) => {
+                return <div key={idx} className={style.table}><div className={style.tb_item}>{ el.split('/')[0] }</div><div className={style.tb_item}>{ el.split('/')[1] }</div></div>
               }) }
             </div>
           : ( !type && region == '경북' ? 
               <div className={style.finder}>
                 <div className={style.sub2}>이런 곳은 어때요?</div>
                 <div className={style.tb}><div className={style.tb_item}>이름</div><div className={style.tb_item}>종류</div></div>
-                  { facilities2.map((el: any) => {
-                    return <div className={style.table}><div className={style.tb_item}>{ el.split('/')[0] }</div><div className={style.tb_item}>{ el.split('/')[1] }</div></div>
+                  { facilities2.map((el: any, idx: number) => {
+                    return <div key={idx} className={style.table}><div className={style.tb_item}>{ el.split('/')[0] }</div><div className={style.tb_item}>{ el.split('/')[1] }</div></div>
                   }) }
                 </div>
            : null )
