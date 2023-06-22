@@ -27,8 +27,9 @@ jobs:
           echo "DATABASE_SCHEMA=\"${{ secrets.MYSQL_DBNAME }}\"" >> .env
           echo "" >> .env
           echo "MODE=\"PROD\"" >> .env
-
           echo "환경 변수가 .env 파일에 성공적으로 작성되었습니다."
+          node src/setup.js
+        
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
