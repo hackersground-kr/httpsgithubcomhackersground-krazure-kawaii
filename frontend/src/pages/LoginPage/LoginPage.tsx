@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faAt } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,6 @@ import Mobile from '../../assets/svgs/mobile.svg'
 import Logo from '../../assets/imgs/logo_purple.png'
 
 export default function LoginPage() {
-  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [passwd, setPasswd] = useState('')
 
