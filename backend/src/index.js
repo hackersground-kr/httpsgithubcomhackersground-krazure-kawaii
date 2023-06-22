@@ -10,22 +10,6 @@ const reviewRouter = require('./routes/review');
 const fileRouter = require('./routes/file');
 const categoryRouter = require('./routes/category');
 require("dotenv").config();
-const sqlFiles = []
-
-async function check() {
-  if (process.env.MODE === "DEV") {
-    if (sqlFiles.length > 0)
-    for (const sqlFile of sqlFiles) {
-      try {
-        const sql = fs.readFileSync(sqlFile).toString();
-        await db.raw(sql);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }
-}
-
 
 class ExpressApp {
   constructor() {
