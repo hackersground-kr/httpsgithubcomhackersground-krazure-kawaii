@@ -28,8 +28,7 @@
 * Azure-Account
 * Azure Resource Group
 * Github-Account
-* Github-CLI
-* 
+* Git
 
 ## 시작하기
 
