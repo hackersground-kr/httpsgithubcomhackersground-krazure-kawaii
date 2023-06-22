@@ -76,3 +76,5 @@
 이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
 
 리소스 그룹 클릭 후 pyl-backend 클릭합니다.
+
+도메인칸의 URL로 접속해 확인합니다.
