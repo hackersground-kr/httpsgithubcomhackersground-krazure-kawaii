@@ -33,12 +33,16 @@
 ## 시작하기
 
 > **배포하기**
-* 레포지토리를 포크해서 가져옵니다.
+
+레포지토리를 포크해서 가져옵니다.
+
 <br>
-* Back-end 세팅을 위해 준비된 Powershell Script를 다운합니다.
+Back-end 세팅을 위해 준비된 Powershell Script를 다운합니다.
+
+
 [PS Script](./auto.ps1)
 <br>
-* 'auto.ps1'에서 GITHUB_USERNAME과 GITHUB_REPOSITORY를 알맞게 수정합니다.
+'auto.ps1'에서 GITHUB_USERNAME과 GITHUB_REPOSITORY를 알맞게 수정합니다.
 <br>
-* 실행시 자동적으로 세팅이 완료됩니다.
+실행시 자동적으로 세팅이 완료됩니다.
 
