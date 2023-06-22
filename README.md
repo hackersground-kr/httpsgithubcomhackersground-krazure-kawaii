@@ -89,3 +89,6 @@ pyl-webapp-backend 선택
 
 최종적으로 배포된 URL로 접속해 확인해볼 수 있습니다.
 <img src="/images/cap7.png">
+
+**프론트엔드**
+**백엔드**
