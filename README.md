@@ -37,8 +37,7 @@
 
 > **배포하기**
 
-1. 레포지토리를 포크해서 가져옵니다.
-
+1. 레포지토리를 포크해서 가져옵니다., az login 을 쉡에 입력합니다.
 <br>
 2. Back-end 세팅을 위해 준비된 Powershell Script를 다운로드합니다.
 [PS Script 다운로드](./auto.ps1)
