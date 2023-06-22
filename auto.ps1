@@ -37,14 +37,14 @@ az webapp create --name $WEBAPP_NAME_FRONTEND --plan $APP_SERVICE_PLAN --resourc
 az webapp config appsettings set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 
-az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > publish_profile.xml
-az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > publish_profile.xml
+az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
+az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > front_publish_profile.xml
 
 gh secret set BACKEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
 gh secret set FRONTEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_FRONTEND
 
-cat .\publish_profile.xml | gh secret set BACKEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
-cat .\publish_profile.xml | gh secret set FRONTEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
+cat .\back_publish_profile.xml | gh secret set BACKEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
+cat .\front_publish_profile.xml | gh secret set FRONTEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
 
 gh auth login
 
