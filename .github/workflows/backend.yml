@@ -11,10 +11,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: backendRun
-        working-directory: ./backend
-        run: |
-          npm install
       - name: setup
         working-directory: ./backend
         run: |
@@ -32,6 +28,10 @@ jobs:
           "@
           Get-Content ".env"
           cat .env
+      - name: backendRun
+        working-directory: ./backend
+        run: |
+          npm install
           node src/setup.js
 
       - name: Deploy to Azure Web App
