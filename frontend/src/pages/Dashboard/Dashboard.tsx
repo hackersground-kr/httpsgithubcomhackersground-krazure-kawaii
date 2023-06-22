@@ -13,6 +13,7 @@ function Dashboard () {
   const navigate = useNavigate()
   const [user, setUser] = useState<any>({})
   const [lectures, setLectures] = useState([])
+  console.log(lectures)
 
   useEffect(() => {
     const getUser = async () => {
@@ -33,12 +34,10 @@ function Dashboard () {
           headers: {
             'authorization': `Bearer ${sessionStorage.getItem('CLIENT_TOKEN')}`
           }
-        }).catch(() => {
-          navigate('/login')
         }))
   
-        setLectures(response.data)
-        console.log(response.data)
+        setLectures(response)
+        console.log(response)
       }
       getLectures()
 
@@ -57,8 +56,6 @@ function Dashboard () {
       }
       getLectures()
     }
-
-
   }, [])
 
   return (
