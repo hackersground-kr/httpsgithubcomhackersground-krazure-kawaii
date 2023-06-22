@@ -39,11 +39,11 @@
 
 1. 레포지토리를 포크해서 가져옵니다., az login 을 쉡에 입력합니다.
 
-포크한 리포지토리 설정에 들어가 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
+1-1. 포크한 리포지토리 설정에 들어가 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
 
-New repository secret 버튼을 누릅니다.
+1-2. New repository secret 버튼을 누릅니다.
 
-이후 원하는 secretkey를 입력 후 Add secret을 눌러 저장합니다.  
+1-3. 이후 원하는 secretkey를 입력 후 Add secret을 눌러 저장합니다.  
 <br>
 3. Back-end 세팅을 위해 준비된 Powershell Script를 다운로드합니다.
 
