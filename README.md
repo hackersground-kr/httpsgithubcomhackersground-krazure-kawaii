@@ -38,6 +38,11 @@
 > **배포하기**
 1. 레포지토리를 포크해서 가져옵니다. az login 을 쉡에 입력합니다.
 
+1-1. 포크된 리포지토리로 이동해 상단 Actions 탭을 클릭합니다.
+<img src="/images/cap8.png">
+
+1-2. "I understand my workflows, go ahead and enable them"을 클릭하여 Action을 enable 시켜줍니다.
+
 2. Back-end 세팅을 위해 준비된 Powershell Script를 다운로드합니다.
 
 [PS Script 다운로드](./auto.ps1)
@@ -66,9 +71,6 @@
 <br>
 
 실행시 자동적으로 세팅이 완료됩니다.
-
-<img src="/images/cap.png">
-리다이렉트된 페이지에서 Powershell 콘솔 창에 출력된 인증 코드를 입력해줍니다.
 
 이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
 
