@@ -52,7 +52,7 @@
 (오직 auto.ps1만 다운하시면 됩니다.)
 
 <br>
-3. 디운받은 'auto.ps1'파일 내부의 GITHUB_USERNAME과 GITHUB_REPOSITORY를 본인의 아이디와 포크한 Repo로 알맞게 수정합니다.
+3. 다운받은 'auto.ps1'파일 내부의 GITHUB_USERNAME과 GITHUB_REPOSITORY를 본인의 아이디와 포크한 Repo로 알맞게 수정합니다.
 <img src="/images/cap.png">
 편집을 들어갑니다.
 
