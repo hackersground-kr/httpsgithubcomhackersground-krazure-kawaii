@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v2
           
       - name: frontRun
+        working-directory: ./frontend
         run: |
-          cd frontend 
           npm i
           npm run build
           npm run start
