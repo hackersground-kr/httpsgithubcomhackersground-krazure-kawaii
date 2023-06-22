@@ -57,7 +57,14 @@
 <img src="/images/cap3.PNG">
 깃허브 아이디와 레포 이름을 수정합니다.
 
-이후 저장후, 실행합니다.
+파워 쉘에서 az login을 입력합니다.
+그리고 사용할 마이크로소프트 계정을 선택하신 후 저장 합니다.
+
+<img width="1552" alt="스크린샷 2023-06-23 오전 1 03 14" src="https://github.com/hackersground-kr/httpsgithubcomhackersground-krazure-kawaii/assets/84012697/c32784cb-461b-4560-9f08-4c7bf423807e">
+
+화면이 뜬다면
+
+그리고 저장한 auto.ps1을 실행합니다.
 <br>
 
 실행시 자동적으로 세팅이 완료됩니다.
