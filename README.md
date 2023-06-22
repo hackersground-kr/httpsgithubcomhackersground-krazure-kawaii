@@ -38,7 +38,9 @@
 > **배포하기**
 1. 레포지토리를 포크해서 가져옵니다. az login 을 쉡에 입력합니다.
 
+<img src="/images/cap.png">
 1-1. 포크한 리포지토리 설정에 들어가 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
+<br>
 
 1-2. New repository secret 버튼을 누릅니다.
 
@@ -73,8 +75,15 @@
 
 실행시 자동적으로 세팅이 완료됩니다.
 
+<img src="/images/cap.png">
+리다이렉트된 페이지에서 Powershell 콘솔 창에 출력된 인증 코드를 입력해줍니다.
+<br>
+
 이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
 
 리소스 그룹 클릭 후 pyl-backend 클릭합니다.
+<img src="/images/cap.png">
+<br>
 
-끝으로 도메인칸의 URL로 접속해 확인해볼 수 있습니다.
+최종적으로 배포된 URL로 접속해 확인해볼 수 있습니다.
+<img src="/images/cap.png">
