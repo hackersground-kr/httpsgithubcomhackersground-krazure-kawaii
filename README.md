@@ -40,7 +40,6 @@
 
 <img src="/images/cap.png">
 1-1. 포크한 리포지토리 설정에 들어가 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
-<br>
 
 1-2. New repository secret 버튼을 누릅니다.
 
@@ -77,7 +76,6 @@
 
 <img src="/images/cap.png">
 리다이렉트된 페이지에서 Powershell 콘솔 창에 출력된 인증 코드를 입력해줍니다.
-<br>
 
 이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
 
