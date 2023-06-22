@@ -40,13 +40,19 @@ az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > publish_profile.xml
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > publish_profile.xml
 
-gh secret set AZURE_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
-gh secret set AZURE_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_FRONTEND
+gh secret set BACKEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
+gh secret set FRONTEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_FRONTEND
 
-az_creds=$(az ad sp create-for-rbac --name "GitHubActionsAzure" --sdk-auth)
-gh secret set AZURE_CREDENTIALS -b"$az_creds" -R $GITHUB_USERNAME/$GITHUB_REPOSITORY
+az ad sp create-for-rbac --name "GitHubActionsAzure" --sdk-auth > azure_credentials.json
 
-cat .\publish_profile.xml | gh secret set AZURE_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
+# Read the contents of the credentials file and store it in AZCARDS variable
+AZCARDS=$(cat azure_credentials.json)
+
+# Add AZCARDS to GitHub Secrets
+gh secret set AZURE_CREDENTIALS --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body "$AZCARDS"
+
+cat .\publish_profile.xml | gh secret set BACKEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
+cat .\publish_profile.xml | gh secret set FRONTEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
 
 gh auth login
 
