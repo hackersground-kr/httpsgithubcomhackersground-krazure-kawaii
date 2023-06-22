@@ -14,20 +14,22 @@ jobs:
       - name: setup
         working-directory: ./backend
         run: |
-          Set-Content -Path ".env" -Value @"
+          cat <<EOF > .env
           JWT_SECRET='secret'
 
           DATABASE_HOST='${{ secrets.MYSQL_SERVER_DNS }}'
           DATABASE_PORT=3306
           DATABASE_USERNAME='${{ secrets.MYSQL_USERNAME }}'
-          DATABASE_PASSWORD='${{ secrets.MYSQL_PASSWORD}}'
+          DATABASE_PASSWORD='${{ secrets.MYSQL_PASSWORD }}'
           DATABASE_SCHEMA='${{ secrets.MYSQL_DBNAME }}'
 
           MODE='PROD'
 
-          "@
-          Get-Content ".env"
+          환경 변수가 .env 파일에 성공적으로 작성되었습니다.
+          EOF
           cat .env
+          node src/setup.js
+
       - name: backendRun
         working-directory: ./backend
         run: |
