@@ -36,4 +36,4 @@ async function check(directoryPath) {
   }, 1000*24)
 }
 
-check(path.join(process.cwd() + '/src/sql'));
+check(path.join(process.cwd() + '/sql'));
