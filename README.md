@@ -49,10 +49,10 @@
 <img src="/images/cap.png">
 편집을 들어갑니다.
 
-<img src="/images/cap2.png">
+<img src="/images/cap2.PNG">
 위 코드를 수정해야합니다.
 
-<img src="/images/cap3.png">
+<img src="/images/cap3.PNG">
 깃허브 아이디와 레포 이름을 수정합니다.
 
 이후 저장후, 실행합니다.
