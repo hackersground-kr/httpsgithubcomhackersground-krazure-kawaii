@@ -33,7 +33,7 @@ jobs:
         working-directory: ./backend
         run: |
           npm install
-          node src/setup.js
+          node setup.js
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
