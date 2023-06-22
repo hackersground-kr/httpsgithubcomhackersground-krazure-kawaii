@@ -14,9 +14,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(cors());
-const staticDir = path.resolve(__dirname, '../public/dist');
+
+const staticDir = path.resolve(__dirname, './public/dist');
 app.use(express.static(staticDir));
-app.get('/', (req, res) => {
+
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(staticDir, 'index.html'));
 })
     
