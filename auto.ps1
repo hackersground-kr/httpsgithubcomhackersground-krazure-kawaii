@@ -6,7 +6,7 @@ $WEBAPP_NAME_BACKEND = "pyl-webapp-backend"
 $WEBAPP_NAME_FRONTEND = "pyl-webapp-frontend"
 $LOCATION = "koreacentral"
 $APP_SERVICE_PLAN = "pyl-plan"
-$MYSQL_SERVER_NAME = "pyl-mysql"
+$MYSQL_SERVER_NAME = "pyl-database"
 $MYSQL_USERNAME = "pyl"
 $MYSQL_PASSWORD = "Password1234"
 $NODE_VERSION = "16"
@@ -37,8 +37,8 @@ az webapp create --name $WEBAPP_NAME_FRONTEND --plan $APP_SERVICE_PLAN --resourc
 az webapp config appsettings set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 
-az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node ."  # 웹 앱의 시작 명령을 "python main.py"로 설정
-az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
+az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node ./backend/."  # 웹 앱의 시작 명령을 "python main.py"로 설정
+az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "cd ./frontend && npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
 
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > front_publish_profile.xml
