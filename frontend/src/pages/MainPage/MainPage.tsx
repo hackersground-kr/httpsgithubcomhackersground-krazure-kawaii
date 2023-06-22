@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import style from './MainPage.module.css'
 import Slides from '../../components/Slides/Slides'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
