@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const authRouter = require('./routes/auth');
 const lectureRouter = require('./routes/lecture');
@@ -19,9 +20,15 @@ class ExpressApp {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }))
     this.app.use(cors());
+    const staticDir = path.resolve(__dirname, '../public/dist');
+    this.app.use(express.static(staticDir));
   }
 
   setupRoutes() {
+    this.app.get('/', (req, res) => {
+      res.sendFile(path.resolve(staticDir, 'index.html'));
+    })
+    
     this.app.get('/api', (req, res) => { 
       return res.status(200).json({
         status: true
