@@ -15,7 +15,7 @@ jobs:
         working-directory: ./frontend
         run: |
           npm i
-          npm run start
+          npm run dev
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
