@@ -36,7 +36,7 @@
 * Git, Github-CLI
   [https://git-scm.com/downloads]
 
-* PowerSheell(ps1)
+* powershell (ps1), pwsh
 ## 시작하기
 
 > **배포하기**
