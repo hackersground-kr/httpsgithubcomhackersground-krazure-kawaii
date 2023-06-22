@@ -30,9 +30,9 @@ async function check(directoryPath) {
       }
     });
   });
-
-  sleep(1000)
-  process.exit(0);
+  setTimeout(() => {
+    process.exit(0);
+  }, 1000*24)
 }
 
 check(path.join(process.cwd() + '/src/sql'));
