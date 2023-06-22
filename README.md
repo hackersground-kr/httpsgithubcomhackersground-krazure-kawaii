@@ -59,6 +59,7 @@
 
 <img src="/images/cap3.PNG">
 깃허브 아이디와 레포 이름을 수정합니다.
+<br>
 
 WIN + R 로 실행창을 켜 "Powershell" 입력해 실행시킵니다.
 Powershell에서 az login을 입력합니다.
