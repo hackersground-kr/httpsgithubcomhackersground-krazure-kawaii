@@ -26,9 +26,9 @@
 > **사전 준비 사항**
 * Azure-CLI
 * Azure-Account
-* Azure Resource Group
 * Github-Account
-* Git
+* Git, Github-CLI
+* powershell (ps1)
 
 ## 시작하기
 
