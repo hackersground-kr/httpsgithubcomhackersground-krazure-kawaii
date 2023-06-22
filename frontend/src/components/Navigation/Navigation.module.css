@@ -1,0 +1,84 @@
+.nav {
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  transition: all;
+  transition-duration: .3s;
+}
+
+.down_nav {
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  background: white;
+  border-bottom: solid 0.5px rgb(229, 229, 229);
+  transition: all;
+  transition-duration: .3s;
+}
+
+.logo_contain {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  filter: invert(0%);
+}
+.down_title {
+  color: #6C63FF;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.menu {
+  /* width: 200px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 15px 5px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 800;
+}
+.down_btn {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 15px 5px 15px;
+  border-radius: 20px;
+  color: #6C63FF;
+  font-weight: 800;
+}
+
+.profile_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+.pf {
+  font-size: 20px;
+}

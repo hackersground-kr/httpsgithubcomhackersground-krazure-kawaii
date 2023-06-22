@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #6C63FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contain {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 45px 19px rgba(0,0,0,0.1);
+  z-index: 20;
+}
+
+.form {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: #6C63FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.team {
+  width: 250px;
+  margin-right: -40px;
+}
+
+.mobile {
+  width: 350px;
+  margin-left: -100px;
+}
+
+.input_contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6C63FF;
+  margin-bottom: 30px;
+}
+
+.input {
+  width: 200px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: solid 2px #6C63FF;
+  font-size: 20px;
+  color: #6C63FF;
+}
+
+.icon {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.up {
+  width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 600;
+}
+
+.btn {
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  border-radius: 15px;
+  background: #6C63FF;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  /* margin-top: 30px; */
+  margin-bottom: 10px;
+}

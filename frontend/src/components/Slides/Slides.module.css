@@ -1,0 +1,50 @@
+.header {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #6C63FF;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.title2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.first {
+  font-size: 30px;
+  /* color: rgb(255, 154, 187); */
+  color: white;
+  font-weight: 700;
+  margin-bottom: -10px;
+}
+
+.last {
+  font-size: 50px;
+  /* color: rgb(255, 119, 165); */
+  color: white;
+  font-weight: 900;
+}
+
+.education {
+  width: 500px;
+}
+.love {
+  margin-right: -100px;
+  width: 250px;
+}

@@ -1,0 +1,154 @@
+.white {
+  width: 100vw;
+  height: 80px;
+  background: #6C63FF;
+  z-index: 30;
+  position: fixed;
+}
+
+.main {
+  margin-bottom: 100px;
+  padding-top: 128px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb {
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  margin-right: 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.item {
+  font-size: 20px;
+  color: #6C63FF;
+}
+
+.icon {
+  font-size: 18px;
+  color: #6C63FF;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.desc {
+  width: 400px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.price {
+  margin-top: 40px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.btn {
+  margin-top: 20px;
+  color: white;
+  background: #6C63FF;
+  padding: 10px 20px 10px 20px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px 4px 10px;
+  border-radius: 20px;
+  border: solid 0.5px rgb(55, 55, 55);
+  margin-bottom: 10px;
+}
+
+.online {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: rgb(121, 255, 87);
+  margin-right: 6px;
+}
+
+.comments_menu {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  width: 750px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.enter_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter_contain {
+  /* box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); */
+  border: solid .5px #6C63FF;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter {
+  outline: none;
+  border-radius: 30px;
+  font-size: 18px;
+  width: 90%;
+  resize: none;
+  border: none;
+}
+
+.submit {
+  margin-left: 20px;
+  width: 95px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background: #6C63FF;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
