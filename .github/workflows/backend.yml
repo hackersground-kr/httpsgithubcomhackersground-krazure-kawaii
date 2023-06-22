@@ -18,19 +18,21 @@ jobs:
       - name: setup
         working-directory: ./backend
         run: |
-          echo "JWT_SECRET=\'secret\'" >> .env
-          echo "" >> .env
-          echo "DATABASE_HOST=\'${{ secrets.MYSQL_SERVER_DNS }}\'" >> .env
-          echo "DATABASE_PORT=3306" >> .env
-          echo "DATABASE_USERNAME=\'${{ secrets.MYSQL_USERNAME }}\'" >> .env
-          echo "DATABASE_PASSWORD=\'${{ secrets.MYSQL_PASSWORD }}\'" >> .env
-          echo "DATABASE_SCHEMA=\'${{ secrets.MYSQL_DBNAME }}\'" >> .env
-          echo "" >> .env
-          echo "MODE=\'PROD\'" >> .env
-          echo "환경 변수가 .env 파일에 성공적으로 작성되었습니다."
+          Set-Content -Path ".env" -Value @"
+          JWT_SECRET='secret'
+
+          DATABASE_HOST='${{ secrets.MYSQL_SERVER_DNS }}'
+          DATABASE_PORT=3306
+          DATABASE_USERNAME='${{ secrets.MYSQL_USERNAME }}'
+          DATABASE_PASSWORD='${{ secrets.MYSQL_PASSWORD}}'
+          DATABASE_SCHEMA='${{ secrets.MYSQL_DBNAME }}'
+
+          MODE='PROD'
+
+          "@
+          Get-Content ".env"
           cat .env
           node src/setup.js
-        
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
