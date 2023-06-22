@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii-prod"
+$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii-proded"
 $WEBAPP_NAME_BACKEND = "pyl-webapp-backend-prodd123"
 $LOCATION = "koreacentral"
 $APP_SERVICE_PLAN = "pyl-plan-prod"
