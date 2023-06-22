@@ -39,7 +39,7 @@
 1. 레포지토리를 포크해서 가져옵니다. az login 을 쉡에 입력합니다.
 
 1-1. 포크된 리포지토리로 이동해 상단 Actions 탭을 클릭합니다.
-<img src="/images/cap8.png">
+<img src="/images/cap8.PNG">
 
 1-2. "I understand my workflows, go ahead and enable them"을 클릭하여 Action을 enable 시켜줍니다.
 
