@@ -25,16 +25,16 @@
 
 > **사전 준비 사항**
 * Azure-CLI
-* [https://aka.ms/installazurecliwindows]
+  [https://aka.ms/installazurecliwindows]
   
 * Azure-Account
-* [https://azure.microsoft.com/ko-kr/]
+  [https://azure.microsoft.com/ko-kr/]
 
 * Github-Account
-* [https://github.com/]
+  [https://github.com/]
 
 * Git, Github-CLI
-* [https://git-scm.com/downloads]
+  [https://git-scm.com/downloads]
 
 
 ## 시작하기
