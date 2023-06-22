@@ -79,9 +79,9 @@
 
 이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
 
-리소스 그룹 클릭 후 pyl-backend 클릭합니다.
-<img src="/images/cap.png">
+리소스 그룹 클릭 후 pyl-webapp-backend 클릭합니다.
+<img src="/images/cap6.png">
 <br>
 
 최종적으로 배포된 URL로 접속해 확인해볼 수 있습니다.
-<img src="/images/cap.png">
+<img src="/images/cap7.png">
