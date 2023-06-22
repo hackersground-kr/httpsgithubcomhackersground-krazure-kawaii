@@ -38,7 +38,7 @@ az webapp create --name $WEBAPP_NAME_FRONTEND --plan $APP_SERVICE_PLAN --resourc
 az webapp config appsettings set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 
-az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "./index.js"  # 웹 앱의 시작 명령을 "npm start"로 설정
+az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node src/."  # 웹 앱의 시작 명령을 "npm start"로 설정
 az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "cd ./frontend && npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
                                                                                                   
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
@@ -46,7 +46,11 @@ az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --res
 
 gh secret set BACKEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
 gh secret set FRONTEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_FRONTEND
+
 gh secret set MYSQL_SERVER_DNS --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_SERVER_DNS
+gh secret set MYSQL_USERNAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_USERNAME
+gh secret set MYSQL_PASSWORD --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_PASSWORD
+gh secret set MYSQL_DBNAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $DB_NAME
 
 cat ./back_publish_profile.xml | gh secret set BACKEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
 cat ./front_publish_profile.xml | gh secret set FRONTEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
