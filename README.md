@@ -39,7 +39,7 @@
 1. 레포지토리를 포크해서 가져옵니다. az login 을 쉡에 입력합니다.
 
 <img src="/images/cap4.png">
-1-1. 포크한 리포지토리 설정에 들어가 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
+1-1. 포크한 리포지토리 settings 탭의 Secrets and variables에 Action 탭으로 들어갑니다.
 
 1-2. New repository secret 버튼을 누릅니다.
 
