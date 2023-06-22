@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Variables
-$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii-prod"
-$WEBAPP_NAME_BACKEND = "pyl-webapp-backend-prod"
-$WEBAPP_NAME_FRONTEND = "pyl-webapp-frontend-pord"
+$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii-proddd"
+$WEBAPP_NAME_BACKEND = "webapp-posdajgo"
+$WEBAPP_NAME_FRONTEND = "webapp-aspdjg"
 $LOCATION = "koreacentral"
 $APP_SERVICE_PLAN = "pyl-plan"
-$MYSQL_SERVER_NAME = "pyl-database-prod"
+$MYSQL_SERVER_NAME = "asdgnkjnas"
 $MYSQL_USERNAME = "pyl"
 $MYSQL_PASSWORD = "Password1234"
 $NODE_VERSION = "16"
