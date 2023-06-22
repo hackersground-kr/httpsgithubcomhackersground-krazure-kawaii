@@ -18,7 +18,7 @@ app.use(cors());
 const staticDir = path.resolve(__dirname, './public/dist');
 app.use(express.static(staticDir));
 
-app.get('*', (req, res) => {
+app.get('/404/*', (req, res) => {
   res.sendFile(path.resolve(staticDir, 'index.html'));
 })
     
@@ -34,7 +34,7 @@ app.use('/api/file', fileRouter)
 app.use('/api/review', reviewRouter)
 app.use('/api/category', categoryRouter)
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log(`Server listening on port 3000`);
 });
 
