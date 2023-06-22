@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Variables
-$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii-proddd"
-$WEBAPP_NAME_BACKEND = "webapp-posdajgo"
-$WEBAPP_NAME_FRONTEND = "webapp-aspdjg"
+$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii"
+$WEBAPP_NAME_BACKEND = "pyl-webapp-backend-prod"
+$WEBAPP_NAME_FRONTEND = "pyl-webapp-frontend-pord"
 $LOCATION = "koreacentral"
 $APP_SERVICE_PLAN = "pyl-plan"
-$MYSQL_SERVER_NAME = "asdgnkjnas"
+$MYSQL_SERVER_NAME = "pyl-database-prod"
 $MYSQL_USERNAME = "pyl"
 $MYSQL_PASSWORD = "Password1234"
 $NODE_VERSION = "16"
@@ -15,7 +15,8 @@ $PUBLIC_ACCESS_START_IP="0.0.0.0"
 $PUBLIC_ACCESS_END_IP="255.255.255.255"
 $DB_NAME="pyl"
 
-$GITHUB_USERNAME="hackersground-kr"
+
+$GITHUB_USERNAME="th-release"
 $GITHUB_REPOSITORY="httpsgithubcomhackersground-krazure-kawaii"
 
 
@@ -26,11 +27,8 @@ az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
 az appservice plan create --name $APP_SERVICE_PLAN --resource-group $RESOURCE_GROUP_NAME --location $LOCATION --sku B1 --is-linux
 
 # Create a MySQL server
-echo "0"
 az mysql flexible-server create --resource-group $RESOURCE_GROUP_NAME --name $MYSQL_SERVER_NAME --location $LOCATION --admin-user $MYSQL_USERNAME --admin-password $MYSQL_PASSWORD --sku-name "Standard_B1s" --tier "Burstable" --public-access $PUBLIC_ACCESS_START_IP-$PUBLIC_ACCESS_END_IP
-echo "1"
 az mysql flexible-server db create --resource-group $RESOURCE_GROUP_NAME --server-name $MYSQL_SERVER_NAME --database-name $DB_NAME
-echo "2"
 
 # Create a Node.js web app
 az webapp create --name $WEBAPP_NAME_BACKEND --plan $APP_SERVICE_PLAN --resource-group $RESOURCE_GROUP_NAME --runtime "$NODE_RUNTIME"
@@ -40,7 +38,7 @@ az webapp create --name $WEBAPP_NAME_FRONTEND --plan $APP_SERVICE_PLAN --resourc
 az webapp config appsettings set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
 
-az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node ./backend/."  # 웹 앱의 시작 명령을 "python main.py"로 설정
+az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "./index.js"  # 웹 앱의 시작 명령을 "python main.py"로 설정
 az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "cd ./frontend && npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
 
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
