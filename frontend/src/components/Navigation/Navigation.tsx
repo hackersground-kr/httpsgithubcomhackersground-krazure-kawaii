@@ -12,6 +12,7 @@ function Navigation () {
   const [scroll, setScroll] = useState(0)
   const [navClass, setNavClass] = useState(false)
   const [user, setUser] = useState({} as any)
+  console.log(user)
 
   const onScroll = () => {
     setScroll(window.scrollY)
