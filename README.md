@@ -41,10 +41,21 @@
 
 <br>
 2. Back-end 세팅을 위해 준비된 Powershell Script를 다운로드합니다.
-
 [PS Script 다운로드](./auto.ps1)
+(오직 auto.ps1만 다운하시면 됩니다.)
+
 <br>
 3. 디운받은 'auto.ps1'파일 내부의 GITHUB_USERNAME과 GITHUB_REPOSITORY를 본인의 아이디와 포크한 Repo로 알맞게 수정합니다.
+<img src="/images/cap.png">
+편집을 들어갑니다.
+
+<img src="/images/cap2.png">
+위 코드를 수정해야합니다.
+
+<img src="/images/cap3.png">
+깃허브 아이디와 레포 이름을 수정합니다.
+
+이후 저장후, 실행합니다.
 <br>
 
 실행시 자동적으로 세팅이 완료됩니다.
