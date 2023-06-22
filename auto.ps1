@@ -1,22 +1,20 @@
 #!/bin/bash
 
 # Variables
-$RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii"
-$WEBAPP_NAME_BACKEND = "pyl-webapp-backend"
-$WEBAPP_NAME_FRONTEND = "pyl-webapp-frontend"
-$LOCATION = "koreacentral"
-$APP_SERVICE_PLAN = "pyl-plan"
-$MYSQL_SERVER_NAME = "pyl-database"
-$MYSQL_USERNAME = "pyl"
-$MYSQL_PASSWORD = "Password1234"
-$NODE_VERSION = "16"
-$NODE_RUNTIME = "node|16-lts"
-$PUBLIC_ACCESS_START_IP="0.0.0.0"
-$PUBLIC_ACCESS_END_IP="255.255.255.255"
-$DB_NAME="pyl"
-
-$GITHUB_USERNAME="hackersground-kr"
-$GITHUB_REPOSITORY="httpsgithubcomhackersground-krazure-kawaii"
+read -p "리소스 그룹 이름을 입력하세요: " RESOURCE_GROUP_NAME
+read -p "백엔드 웹 앱 이름을 입력하세요: " WEBAPP_NAME_BACKEND
+read -p "프론트엔드 웹 앱 이름을 입력하세요: " WEBAPP_NAME_FRONTEND
+read -p "위치를 입력하세요: " LOCATION
+read -p "App Service 계획 이름을 입력하세요: " APP_SERVICE_PLAN
+read -p "MySQL 서버 이름을 입력하세요: " MYSQL_SERVER_NAME
+read -p "MySQL 사용자 이름을 입력하세요: " MYSQL_USERNAME
+read -p "MySQL 암호를 입력하세요: " MYSQL_PASSWORD
+read -p "Node.js 버전을 입력하세요: " NODE_VERSION
+read -p "퍼블릭 액세스 시작 IP를 입력하세요: " PUBLIC_ACCESS_START_IP
+read -p "퍼블릭 액세스 종료 IP를 입력하세요: " PUBLIC_ACCESS_END_IP
+read -p "데이터베이스 이름을 입력하세요: " DB_NAME
+read -p "GitHub 사용자 이름을 입력하세요: " GITHUB_USERNAME
+read -p "GitHub 리포지토리 이름을 입력하세요: " GITHUB_REPOSITORY
 
 
 # Create a resource group
@@ -40,7 +38,7 @@ az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $
 az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node ./backend/."  # 웹 앱의 시작 명령을 "python main.py"로 설정
 az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "cd ./frontend && npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
 
-MYSQL_DNS=$(az mysql server show --resource-group $RESOURCE_GROUP_NAME --name $MYSQL_SERVER_NAME --query fullyQualifiedDomainName -o tsv)
+MYSQL_DNS=$(az mysql server show --resource-group "$RESOURCE_GROUP_NAME" --name "$MYSQL_SERVER_NAME" --query fullyQualifiedDomainName -o tsv)
 
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > front_publish_profile.xml
