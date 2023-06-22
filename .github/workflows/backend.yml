@@ -15,7 +15,20 @@ jobs:
         working-directory: ./backend
         run: |
           npm install
-        
+      - name: setup
+        working-directory: ./backend
+        run: |
+          echo "JWT_SECRET=\"secret\"" >> .env
+          echo "" >> .env
+          echo "DATABASE_HOST=\"${{ secrets.MYSQL_SERVER_DNS }}\"" >> .env
+          echo "DATABASE_PORT=3306" >> .env
+          echo "DATABASE_USERNAME=\"${{ secrets.MYSQL_USERNAME }}\"" >> .env
+          echo "DATABASE_PASSWORD=\"${{ secrets.MYSQL_PASSWORD }}\"" >> .env
+          echo "DATABASE_SCHEMA=\"${{ secrets.MYSQL_DBNAME }}\"" >> .env
+          echo "" >> .env
+          echo "MODE=\"PROD\"" >> .env
+
+          echo "환경 변수가 .env 파일에 성공적으로 작성되었습니다."
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
