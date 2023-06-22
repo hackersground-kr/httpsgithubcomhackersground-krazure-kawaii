@@ -15,7 +15,7 @@ jobs:
         working-directory: ./frontend
         run: |
           npm i
-          npm rum build
+          npm rum build --if-present
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
