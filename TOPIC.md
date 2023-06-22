@@ -55,8 +55,11 @@
 ## 제품 아키텍처 (이미지)
 구조도 > [images](./images/info1.png)
 
+
 ## 제품 소개 슬라이드
-[decks](./decks/ppt1.pdf)
+[decks(pdf)](./decks/hackersground.pdf)
+[decks(pptx)](./decks/hakersground.pptx)
+
 
 ## 제품 소개 동영상
 <!--
