@@ -40,11 +40,14 @@ az webapp config appsettings set --name $WEBAPP_NAME_FRONTEND --resource-group $
 az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "node ./backend/."  # 웹 앱의 시작 명령을 "python main.py"로 설정
 az webapp config set --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --startup-file "cd ./frontend && npm run dev"  # 웹 앱의 시작 명령을 "npm start"로 설정
 
+MYSQL_DNS=$(az mysql server show --resource-group $RESOURCE_GROUP_NAME --name $MYSQL_SERVER_NAME --query fullyQualifiedDomainName -o tsv)
+
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_FRONTEND --resource-group $RESOURCE_GROUP_NAME --xml > front_publish_profile.xml
 
 gh secret set BACKEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
 gh secret set FRONTEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_FRONTEND
+gh secret set MYSQL_DNS --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_DNS
 
 cat ./back_publish_profile.xml | gh secret set BACKEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
 cat ./front_publish_profile.xml | gh secret set FRONTEND_WEBAPP_PUBLISH_PROFILE --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY
