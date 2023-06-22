@@ -34,7 +34,7 @@ app.use('/api/file', fileRouter)
 app.use('/api/review', reviewRouter)
 app.use('/api/category', categoryRouter)
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log(`Server listening on port 3000`);
 });
 
