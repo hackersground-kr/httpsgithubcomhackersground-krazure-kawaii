@@ -22,4 +22,4 @@ jobs:
         with:
           app-name: ${{ secrets.FRONTEND_APP_NAME }}
           publish-profile: ${{ secrets.FRONTEND_WEBAPP_PUBLISH_PROFILE }}
-          package: $(System.ArtifactsDirectory)/frontend
+          package: .
