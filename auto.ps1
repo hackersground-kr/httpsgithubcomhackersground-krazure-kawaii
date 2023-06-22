@@ -16,7 +16,7 @@ $PUBLIC_ACCESS_END_IP="255.255.255.255"
 $DB_NAME="pyl"
 
 
-$GITHUB_USERNAME="th-release"
+$GITHUB_USERNAME="hackersground-kr"
 $GITHUB_REPOSITORY="httpsgithubcomhackersground-krazure-kawaii"
 
 
