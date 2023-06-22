@@ -15,20 +15,7 @@ jobs:
         working-directory: ./backend
         run: |
           npm install
-          
-      - name: envSet
-        working-directory: ./backend
-        run: |
-          rm -f .env
-          echo 'JWT_SECRET="secret"' >> .env
-          echo "DATABASE_HOST=${{ secrets.MYSQL_DNS }}" >> .env
-          echo 'DATABASE_PORT=3306' >> .env
-          echo 'DATABASE_USERNAME="pyl"' >> .env
-          echo 'DATABASE_PASSWORD="Password1234"' >> .env
-          echo 'DATABASE_SCHEMA="pyl"' >> .env
-          echo 'MODE="PROD"' >> .env
-          node setup.js
-
+        
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
