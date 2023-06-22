@@ -36,8 +36,8 @@
 ## 시작하기
 
 > **배포하기**
-1. 레포지토리를 포크해서 가져옵니다. az login 을 쉡에 입력합니다.
-
+1. 레포지토리를 포크해서 가져옵니다.
+2. 
 1-1. 포크된 리포지토리로 이동해 상단 Actions 탭을 클릭합니다.
 <img src="/images/cap8.png">
 
@@ -60,7 +60,8 @@
 <img src="/images/cap3.PNG">
 깃허브 아이디와 레포 이름을 수정합니다.
 
-파워 쉘에서 az login을 입력합니다.
+WIN + R 로 실행창을 켜 "Powershell" 입력해 실행시킵니다.
+Powershell에서 az login을 입력합니다.
 그리고 사용할 마이크로소프트 계정을 선택하신 후 저장 합니다.
 
 <img width="1552" alt="스크린샷 2023-06-23 오전 1 03 14" src="https://github.com/hackersground-kr/httpsgithubcomhackersground-krazure-kawaii/assets/84012697/c32784cb-461b-4560-9f08-4c7bf423807e">
