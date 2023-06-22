@@ -15,6 +15,11 @@ jobs:
         working-directory: ./backend
         run: |
           npm install
+          
+      - name: envSet
+        working-directory: ./backend
+        run: |
+          
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
