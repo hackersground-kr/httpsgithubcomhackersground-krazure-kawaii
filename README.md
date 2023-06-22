@@ -69,3 +69,4 @@
 
 실행시 자동적으로 세팅이 완료됩니다.
 
+이후 az login에서 선택한 계정으로 [Azure](https://portal.azure.com/#home) 접속하여 확인합니다.
