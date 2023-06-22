@@ -42,7 +42,9 @@ Back-end 세팅을 위해 준비된 Powershell Script를 다운합니다.
 
 [PS Script](./auto.ps1)
 <br>
-'auto.ps1'에서 GITHUB_USERNAME과 GITHUB_REPOSITORY를 알맞게 수정합니다.
+
+'auto.ps1'에서 GITHUB_USERNAME과 GITHUB_REPOSITORY를 본인의 아이디와 포크한 Repo로 알맞게 수정합니다.
 <br>
+
 실행시 자동적으로 세팅이 완료됩니다.
 
