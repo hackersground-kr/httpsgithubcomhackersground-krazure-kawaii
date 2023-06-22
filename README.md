@@ -24,19 +24,15 @@
 ## 설치 방법
 
 > **사전 준비 사항**
-* Azure-CLI
-  (https://aka.ms/installazurecliwindows)
+* [Azure-CLI](https://aka.ms/installazurecliwindows)
   
-* Azure-Account
-  (https://azure.microsoft.com/ko-kr/)
+* [Azure-Account](https://azure.microsoft.com/ko-kr/)
 
-* Github-Account
-  (https://github.com/)
+* [Github-Account](https://github.com/)
 
-* Git, Github-CLI
-  (https://git-scm.com/downloads)
+* [Git, Github-CLI](https://git-scm.com/downloads)
 
-* powershell (ps1), pwsh
+* [powershell (ps1), pwsh]
 ## 시작하기
 
 > **배포하기**
