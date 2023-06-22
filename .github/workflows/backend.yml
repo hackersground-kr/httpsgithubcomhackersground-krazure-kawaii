@@ -13,6 +13,7 @@ jobs:
 
       - name: backendRun
         run: |
+          cd backend
           npm install
           node .
 
