@@ -79,7 +79,7 @@ Powershell에서 az login을 입력합니다.
 <img src="/images/cap5.png">
 <br>
 
-pyl-webapp-backend 선택
+backend 선택
 <img src="/images/cap6.png">
 <br>
 
