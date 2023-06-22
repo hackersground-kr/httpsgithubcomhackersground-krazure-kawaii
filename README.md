@@ -64,7 +64,7 @@
 
 New repository secret 버튼을 누릅니다.
 
-이후 원하는 secretkey를 입력 후 저장합니다.  
+이후 원하는 secretkey를 입력 후 Add secret을 눌러 저장합니다.  
 
 <img width="1552" alt="스크린샷 2023-06-23 오전 1 03 14" src="https://github.com/hackersground-kr/httpsgithubcomhackersground-krazure-kawaii/assets/84012697/c32784cb-461b-4560-9f08-4c7bf423807e">
 
