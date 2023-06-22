@@ -5,7 +5,7 @@ $RESOURCE_GROUP_NAME = "rg-hg-httpsgithubcomhackersground-krazure-kawaii"
 $WEBAPP_NAME_BACKEND = "pyl-webapp-backend-prod"
 $LOCATION = "koreacentral"
 $APP_SERVICE_PLAN = "pyl-plan"
-$MYSQL_SERVER_NAME = "pyl-database-mysql"
+$MYSQL_SERVER_NAME = "pyl-database-server"
 $MYSQL_USERNAME = "pyl"
 $MYSQL_PASSWORD = "Password1234"
 $NODE_VERSION = "16"
@@ -34,14 +34,12 @@ az webapp create --name $WEBAPP_NAME_BACKEND --plan $APP_SERVICE_PLAN --resource
 
 # Configure the Node.js version
 az webapp config appsettings set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --settings WEBSITE_NODE_DEFAULT_VERSION=$NODE_VERSION
-
-az webapp config set --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --startup-file "npm start"  # 웹 앱의 시작 명령을 "npm start"로 설정
                                                                                                   
 az webapp deployment list-publishing-profiles --name $WEBAPP_NAME_BACKEND --resource-group $RESOURCE_GROUP_NAME --xml > back_publish_profile.xml
 
 gh secret set BACKEND_APP_NAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $WEBAPP_NAME_BACKEND
 
-q/$GITHUB_REPOSITORY --body $MYSQL_SERVER_DNS
+gh secret set MYSQL_SERVER_DNS --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_SERVER_DNS
 gh secret set MYSQL_USERNAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_USERNAME
 gh secret set MYSQL_PASSWORD --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $MYSQL_PASSWORD
 gh secret set MYSQL_DBNAME --repo $GITHUB_USERNAME/$GITHUB_REPOSITORY --body $DB_NAME
