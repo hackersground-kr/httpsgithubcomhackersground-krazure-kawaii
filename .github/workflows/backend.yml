@@ -14,7 +14,6 @@ jobs:
       - name: backendRun
         working-directory: ./backend
         run: |
-          cd backend
           npm install
           node .
 
