@@ -28,7 +28,6 @@ jobs:
           환경 변수가 .env 파일에 성공적으로 작성되었습니다.
           EOF
           cat .env
-          node src/setup.js
 
       - name: backendRun
         working-directory: ./backend
